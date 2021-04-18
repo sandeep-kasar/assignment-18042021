@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="lbl_sign_in">Sign In</string>
+    <string name="msg_you_are_within_the_range">You are within the range !</string>
+    <string name="msg_not_in_range">You are not within the range !</string>
+    <string name="hint_user_name">User Name</string>
+</resources>

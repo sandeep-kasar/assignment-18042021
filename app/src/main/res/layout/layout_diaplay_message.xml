@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="clip_vertical"
+    android:padding="@dimen/dim_5dp"
+    >
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:minHeight="@dimen/dim_80dp"
+        android:gravity="center"
+        android:padding="@dimen/dim_10"
+        android:layout_marginRight="@dimen/dim_45dp"
+        android:textColor="@color/green"
+        android:textStyle="bold"
+        android:text="@string/msg_you_are_within_the_range"
+        android:textSize="@dimen/txt_18sp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgClose"
+        android:layout_width="@dimen/dim_45dp"
+        android:layout_height="@dimen/dim_45dp"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:padding="@dimen/dim_15dp"
+        app:srcCompat="@drawable/ic_cancel"
+        tools:ignore="VectorDrawableCompat">
+
+    </androidx.appcompat.widget.AppCompatImageView>
+
+
+</RelativeLayout>
