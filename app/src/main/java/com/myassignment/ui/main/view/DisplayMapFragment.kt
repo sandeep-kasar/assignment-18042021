@@ -4,10 +4,12 @@ import android.Manifest
 import android.app.Activity
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.location.Location
+import android.location.LocationManager
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
@@ -19,6 +21,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
+import androidx.core.location.LocationManagerCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -78,6 +81,8 @@ class DisplayMapFragment : Fragment(), OnMapReadyCallback {
         mapFragment?.getMapAsync(this)
 
         getLocationPermission()
+
+        isLocationEnabled()
     }
 
     override fun onActivityResult(
@@ -253,6 +258,14 @@ class DisplayMapFragment : Fragment(), OnMapReadyCallback {
             locationPermissionGranted = true
         } else {
             checkPermission()
+        }
+    }
+
+    private fun isLocationEnabled() {
+        val locationManager = requireActivity().getSystemService(Context.LOCATION_SERVICE) as LocationManager
+         val isLocationEnable = LocationManagerCompat.isLocationEnabled(locationManager)
+        if (!isLocationEnable){
+            Toast.makeText(requireActivity(),"Please enable your location",Toast.LENGTH_LONG).show()
         }
     }
 
